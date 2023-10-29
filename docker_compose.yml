@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  helloflask:
+    img: helloflask
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    healthcheck:
+      test: [ "executable", "arg" ]
+      interval: 1m30s
+      timeout: 40s
+      retries: 5
+      start_period: 30s
